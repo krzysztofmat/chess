@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
+import ChessBoard from './components/ChessBoard.vue';
 </script>
 
 <template>
-  <header>
+  <header class="bg-black">
     <img
       alt="Vue logo"
       class="logo"
@@ -14,6 +15,8 @@ import HelloWorld from './components/HelloWorld.vue';
     />
 
     <div class="wrapper">
+      <ChessBoard />
+
       <HelloWorld msg="You did it!" />
 
       <nav>
