@@ -2,9 +2,12 @@
 import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
 import ChessBoard from './components/ChessBoard.vue';
+import PlayComputer from './components/PlayComputer.vue';
 </script>
 
 <template>
+  <PlayComputer />
+  <!--
   <header class="bg-black">
     <img
       alt="Vue logo"
@@ -24,9 +27,11 @@ import ChessBoard from './components/ChessBoard.vue';
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
+
   </header>
 
   <RouterView />
+   -->
 </template>
 
 <style scoped>
