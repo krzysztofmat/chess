@@ -66,7 +66,7 @@ export default {
 </script>
 
 <template>
-  <div class="chess-board grid" :style="`${grid_template_areas}`">
+  <div class="chess-board grid aspect-square" :style="`${grid_template_areas}`">
     <template v-for="row in rows" :key="`row-${row}`">
       <template v-for="column in columns" :key="`column-${column}`">
         <ChessSquare
@@ -80,11 +80,11 @@ export default {
     </template>
   </div>
 </template>
+5
 
 <style scoped>
 .chess-board {
-  width: 100vmin;
-  height: 100vmin;
+  width: 100%;
   grid-auto-rows: calc(100% / 8);
   grid-auto-columns: calc(100% / 8);
 }
