@@ -40,7 +40,7 @@ export default {
       <div>eva<br />bar</div>
       <div><ChessBoard></ChessBoard></div>
       <div class="flex flex-col-reverse">
-        <span class="text-lg">&#x2921;</span>
+        <span class="text-lg cursor-nw-resize">&#x2921;</span>
       </div>
 
       <div></div>
