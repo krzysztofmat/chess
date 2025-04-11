@@ -5,7 +5,7 @@ export const enum colorModeEnum {
 
 export type colorModeEnumType = colorModeEnum.DARK | colorModeEnum.LIGHT;
 
-export interface colorModeOnSquares {
+export interface IColorModeOnSquares {
   [key: string]: colorModeEnumType;
 }
 
@@ -14,14 +14,14 @@ export const enum playAsEnum {
   BLACK = 'black',
 }
 
-export type playAsEnumType = playAsEnum.WHITE | playAsEnum.WHITE;
+export type playAsEnumType = playAsEnum.WHITE | playAsEnum.BLACK;
 
-export interface PlayerAtGame {
-  imageUrl: string;
+export interface IPlayerAtGame {
+  imageUrl?: string;
   nickname: string;
   rating: number;
   playAs: playAsEnumType;
-  takenPieces: {
+  takenPieces?: {
     pawns: number;
     knights: number;
     bishops: number;

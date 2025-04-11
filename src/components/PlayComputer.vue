@@ -1,9 +1,33 @@
 <script lang="ts">
+import { playAsEnum, type IPlayerAtGame } from '@/supports/colorModeEnum';
 import ChessBoard from './ChessBoard.vue';
+import PlayerAtGame from './PlayerAtGame.vue';
+import TheAdvertising from './TheAdvertising.vue';
+import TheAdvertisingV2 from './TheAdvertisingV2.vue';
+
+const mePlayer: IPlayerAtGame = {
+  nickname: 'km',
+  rating: 1400,
+  playAs: playAsEnum.WHITE,
+};
+const opponentPlayer: IPlayerAtGame = {
+  nickname: 'computer250',
+  rating: 250,
+  playAs: playAsEnum.BLACK,
+};
 
 export default {
+  data() {
+    return {
+      mePlayer,
+      opponentPlayer,
+    };
+  },
   components: {
     ChessBoard: ChessBoard,
+    PlayerAtGame: PlayerAtGame,
+    TheAdvertising,
+    TheAdvertisingV2,
   },
 };
 </script>
@@ -14,24 +38,7 @@ export default {
   >
     <div class="play-computer-chessboard grid">
       <div></div>
-      <div class="flex">
-        <div class="w-12 bg-white">&nbsp;</div>
-        <div class="pl-1 flex flex-col">
-          <div>
-            <span class="font-semibold inline-block text-sm">Początkujący</span>
-            <span class="text-gray-400 ml-1 text-sm">(250)</span>
-          </div>
-          <div class="h-6 flex" style="height: 1.5rem">
-            <img src="@/assets/pieces/cburnett/wp.svg" style="height: 100%" />
-            <img src="@/assets/pieces/cburnett/wb.svg" style="height: 100%" />
-            <img
-              src="@/assets/pieces/cburnett/wb.svg"
-              class="-ml-3"
-              style="height: 100%"
-            />
-          </div>
-        </div>
-      </div>
+      <PlayerAtGame :playerAtGame="opponentPlayer" />
       <div class="flex flex-col">
         <span class="text-lg">&#x2699;</span>
         <span class="text-lg rotate-90">&#x21C6;</span>
@@ -44,32 +51,16 @@ export default {
       </div>
 
       <div></div>
-      <div class="flex">
-        <div class="w-12 bg-white">&nbsp;</div>
-        <div class="pl-1 flex flex-col">
-          <div>
-            <span class="font-semibold inline-block text-sm">Początkujący</span>
-            <span class="text-gray-400 ml-1 text-sm">(250)</span>
-          </div>
-          <div class="h-6 flex" style="height: 1.5rem">
-            <img src="@/assets/pieces/cburnett/wp.svg" style="height: 100%" />
-            <img src="@/assets/pieces/cburnett/wb.svg" style="height: 100%" />
-            <img
-              src="@/assets/pieces/cburnett/wb.svg"
-              class="-ml-3"
-              style="height: 100%"
-            />
-          </div>
-        </div>
-      </div>
+      <PlayerAtGame :playerAtGame="mePlayer" />
       <div></div>
     </div>
 
-    <div class="play-computer-options-and-game">
-      select engine, moves backward forward
-    </div>
+    <div class="play-computer-options-and-game"></div>
 
-    <div class="play-computer-advertise">Advertisment</div>
+    <div class="play-computer-advertise">
+      <TheAdvertising />
+      <TheAdvertisingV2 />
+    </div>
   </div>
 </template>
 

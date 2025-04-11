@@ -1,11 +1,12 @@
 <script lang="ts">
-import { colorModeEnum, colorModeEnumType } from '@/supports/colorModeEnum';
+import { colorModeEnum } from '@/supports/colorModeEnum';
+import type { colorModeEnumType } from '@/supports/colorModeEnum';
 import type { PropType } from 'vue';
 
 export default {
   props: {
     column: {
-      type: String,
+      type: Number,
       required: true,
     },
     row: {
@@ -70,12 +71,19 @@ export default {
       </svg>
       -->
       <img
+        :draggable="true"
         alt="Black bishop"
         class="absolute"
         src="@/assets/pieces/cburnett/bb.svg"
         width="125"
         height="125"
+        v-if="column == 1 && row == 1"
       />
+      <div
+        style="z-index: 1"
+        class="w-full h-full"
+        :class="colorModeClasses"
+      ></div>
     </div>
   </div>
 </template>
