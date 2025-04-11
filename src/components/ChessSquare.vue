@@ -74,16 +74,11 @@ export default {
         :draggable="true"
         alt="Black bishop"
         class="absolute"
-        src="@/assets/pieces/cburnett/bb.svg"
+        src="/pieces/cburnett/bb.svg"
         width="125"
         height="125"
         v-if="column == 1 && row == 1"
       />
-      <div
-        style="z-index: 1"
-        class="w-full h-full"
-        :class="colorModeClasses"
-      ></div>
     </div>
   </div>
 </template>
